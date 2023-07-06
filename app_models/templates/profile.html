@@ -1,0 +1,13 @@
+{% extends 'basenew.html' %}
+{% block content %}
+
+  <h1>User Profile</h1>
+  <h3>{{ user.username }}</h3>
+  <p>Date of Birth: {{ user.date_of_birth }}</p>
+  <p>Gender: {{ user.profile.gender }}</p>
+  <p>Bio: {{ user.profile.bio }}</p>
+  <p>Website: {{ user.profile.website }}</p>
+  <p>Location: {{ user.profile.location }}</p>
+  <a href="edit_profile" style="background-color: blue; color: white; padding: 8px 16px; text-decoration: none; border: none; font-size: 14px; cursor: pointer;">Edit Profile</a>
+
+{% endblock %}

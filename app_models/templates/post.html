@@ -1,0 +1,63 @@
+{% extends 'basenew.html' %}
+{% block content %}
+  {% for p in post %}
+    <div class="post">
+      <h3>{{ p.user }}</h3>
+      <p>{{ p.caption }}</p>
+      <img src="{{ p.image_or_video_content.url }}" alt="Post Image"> 
+      <div class="likes-section">
+        <form action="{% url 'like_post' pk=p.pk %}" method="POST" style="display: inline;">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-primary">Like</button>
+        </form>
+        <span>{{ p.count }} like{% if p.count != 1 %}s{% endif %}</span>
+        <a href="{% url 'post_detail' post_id=p.pk %}" style="background-color: blue; color: white; padding: 8px 16px; text-decoration: none; border: none; font-size: 14px; cursor: pointer;">Add Comment</a>
+ 
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
